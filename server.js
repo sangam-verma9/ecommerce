@@ -6,6 +6,12 @@ const cloudinary =require ("cloudinary")
 const dotenv = require("dotenv");
 dotenv.config({ path: "config.env" });
 
+//-------------
+const cors = require("cors");
+
+app.use(cors({ origin: "https://ecommerce-sangam.netlify.app" }));
+//------------
+
 //uncaught error ** such as you type console.log(sangam) but sangam not defied 
 //so we want to close server at upper so here we define upper
 process.on("uncaughtException", (err) => {
