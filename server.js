@@ -9,8 +9,8 @@ dotenv.config({ path: "config.env" });
 //-------------
 const cors = require("cors");
 
-app.use(cors({ origin: "*" }));
-// app.use(cors({ origin: "https://ecommerce-sangam.netlify.app" }));
+// app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://ecommerce-sangam.netlify.app" }));
 //------------
 
 //-------------
@@ -18,7 +18,10 @@ app.use(cors({ origin: "*" }));
 // Add headers
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://ecommerce-sangam.netlify.app"
+  );
 
   // Request methods you wish to allow
   res.setHeader(
