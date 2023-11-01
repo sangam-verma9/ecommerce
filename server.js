@@ -9,7 +9,8 @@ dotenv.config({ path: "config.env" });
 //-------------
 const cors = require("cors");
 
-app.use(cors({ origin: "https://ecommerce-sangam.netlify.app" }));
+app.use(cors({ origin: "*" }));
+// app.use(cors({ origin: "https://ecommerce-sangam.netlify.app" }));
 //------------
 
 //uncaught error ** such as you type console.log(sangam) but sangam not defied 
