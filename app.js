@@ -5,7 +5,7 @@ const fileUpload = require("express-fileupload");
 
 //add environment variable
 const dotenv = require("dotenv");
-dotenv.config({ path: "config/config.env" });
+dotenv.config({ path: "config.env" });
 
 const app = express();
 app.use(express.json());

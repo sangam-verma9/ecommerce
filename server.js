@@ -4,7 +4,7 @@ const cloudinary =require ("cloudinary")
 
 //add environment variable
 const dotenv = require("dotenv");
-dotenv.config({ path: "config/config.env" });
+dotenv.config({ path: "config.env" });
 
 //uncaught error ** such as you type console.log(sangam) but sangam not defied 
 //so we want to close server at upper so here we define upper
