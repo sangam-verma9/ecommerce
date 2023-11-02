@@ -16,7 +16,9 @@ app.use(cookiep());
 const cors = require("cors");
 
 // app.use(cors({ origin: "*" }));
-app.use(cors({ origin: "https://ecommerce-sangam.netlify.app" }));
+app.use(
+  cors({ origin: "https://ecommerce-sangam.netlify.app", credentials: true })
+);
 //------------
 
 //-------------
