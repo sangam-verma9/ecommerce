@@ -1,6 +1,3 @@
-const Cookies = require("universal-cookie");
-const cookies = new Cookies();
-
 const sendToken = (user, statuscode, res) => {
   const token = user.generatejwtToken();
   const options = {
@@ -10,9 +7,8 @@ const sendToken = (user, statuscode, res) => {
     secure: true, // set to true if your using https or samesite is none
     httpOnly: true, // backend only
     sameSite: "none", // set to none for cross-request
+    domain: "https://ecommerce-sangam.netlify.app",
   };
-
-  cookies.set("token", token, options);
 
   res.status(statuscode).cookie("token", token, options).json({
     success: true,
