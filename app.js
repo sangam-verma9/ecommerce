@@ -21,6 +21,7 @@ app.use(
     methods: ["GET", "PUT", "POST", "OPTIONS", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token"],
     credentials: true,
+    exposedHeaders: ["set-cookie"],
   })
 );
 //------------
