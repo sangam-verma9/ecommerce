@@ -4,10 +4,10 @@ const sendToken = (user, statuscode, res) => {
     expires: new Date(
       Date.now() + process.env.COKKIE_EXPIRE * 24 * 60 * 60 * 1000
     ),
-    // secure: true, // set to true if your using https or samesite is none
+    secure: true, // set to true if your using https or samesite is none
     httpOnly: true, // backend only
-    // sameSite: "none", // set to none for cross-request
-    // path: "/",
+    sameSite: "lax", // set to none for cross-request
+    path: "/",
     // domain: ".onrender.com",
   };
 
