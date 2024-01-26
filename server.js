@@ -1,3 +1,4 @@
+const express =require("express")
 const app = require("./app");
 const connectdb = require("./database/db");
 const cloudinary =require ("cloudinary")
@@ -5,7 +6,7 @@ const cloudinary =require ("cloudinary")
 //add environment variable
 const dotenv = require("dotenv");
 dotenv.config({ path: "config.env" });
-
+const path =require("path")
 
 //uncaught error ** such as you type console.log(sangam) but sangam not defied 
 //so we want to close server at upper so here we define upper
@@ -24,6 +25,11 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+
+app.get("/",(req,res)=>{
+  app.use(express.static(path.resolve(__dirname,"frontend","build")));
+  res.sendFile(path.resolve(__dirname,"frontend","build","index.html"));
+})
 
 const PORT = process.env.PORT || 4000;
 const server = app.listen(PORT, () => {

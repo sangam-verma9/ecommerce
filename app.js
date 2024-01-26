@@ -5,25 +5,25 @@ const fileUpload = require("express-fileupload");
 
 //add environment variable
 const dotenv = require("dotenv");
-dotenv.config({ path: "config.env" });
+dotenv.config({ path: "./config/config.env" });
 
 const app = express();
 app.use(express.json());
 app.use(cookiep());
 
 //-------------
-const cors = require("cors");
+// const cors = require("cors");
 
 // app.use(cors({ origin: "*" }));
-app.use(
-  cors({
-    origin: "https://ecommerce-sangam.netlify.app",
-    methods: ["GET", "PUT", "POST", "OPTIONS", "DELETE", "PATCH"],
-    allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token"],
-    credentials: true,
-    exposedHeaders: ["set-cookie"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://ecommerce-sangam.netlify.app",
+//     methods: ["GET", "PUT", "POST", "OPTIONS", "DELETE", "PATCH"],
+//     allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token"],
+//     credentials: true,
+//     exposedHeaders: ["set-cookie"],
+//   })
+// );
 //------------
 
 //-------------
